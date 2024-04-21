@@ -1,26 +1,31 @@
-import React from 'react';
-import logo from './logo.svg';
 import './App.css';
+import { Books } from './components/books';
 
-function App() {
+const Application: React.FC = () => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="app">
+      <h2>Steps to test:</h2>
+      <ol>
+        <li>
+          <strong>For running local server please run this command in the root of repo:</strong>
+          <strong>"npm run server"</strong>
+        </li>
+        <li>
+          Page will fetch data when react component mounted.
+        </li>
+        <li>
+          Refetch button will ignore Stale time of cache and send request to server for fetching new data.
+        </li>
+        <li>
+          Refresh the page will reload it to show process of getting data from cache.
+        </li>
+        <li>
+          Stale time set on 5 seconds
+        </li>
+      </ol>
+      <Books />
     </div>
   );
 }
 
-export default App;
+export default Application;
